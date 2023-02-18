@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-image:url(./greenary.jpg) ;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+            /* background-position: 0px -200px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #div{
+            position: relative;
+            width: 30%;
+            height: 50%;
+            /* top: 100px; */
+            border: 3px black solid;
+            border-radius: 2%;
+            background-color: rgba(0,0,0,0.486);
+            box-shadow:5px 5px 5px black;
+        }
+        #display{
+            width: 70%;
+            height: 30px;
+            position: absolute;
+            top: 5%;
+            left: 32px;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            padding: 5px;
+            outline: none;
+            border: groove 10px rgb(155,155,155);
+            box-shadow: 2px 2px 5px black;
+        }
+        .a{
+        position: relative;
+        top: 10vh;
+        left: 5vw;
+        width: 15%;
+        height: 6vh;
+        background-color: black;
+        color: white;
+        font-size: 20px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px black;
+        border: 2px solid white;
+        margin: 1px;
+        }
+        #clear{
+            position: absolute;
+            bottom: 10px;
+            width: 25%;
+            background-color: black;
+            color: white;
+            height: 6vh;
+            font-size: 20px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px black;
+        border: 2px solid white;
+        left: 80px;
+        }
+        #equ{
+        position: absolute;
+            bottom: 10px;
+            width: 25%;
+            background-color: black;
+            color: white;
+            height: 6vh;
+            font-size: 20px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px black;
+        border: 2px solid white;
+        left: 180px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+    <form name="cform">
+        <input name="ans" id="display"> 
+        <br><br>
+        <input type="button" value="1" onclick="cform.ans.value +='1'" class="a" id="b" onkeydown="col()" onkeyup="notcol()" onmousedown=" click1()" >
+        <input type="button" value="2" onclick="cform.ans.value +='2'" class="a" id="c" onkeydown="pink()" onkeyup="notcol()" onmousedown="click2()">
+        <input type="button" value="3" onclick="cform.ans.value +='3'" class="a" id="d"  onkeydown="green()" onkeyup="notcol()" onmousedown="click3()">
+        <input type="button" value="+" onclick="cform.ans.value +='+'" class="a" id="e" onkeydown="oran()" onkeyup="notcol()" onmousedown="click4()">
+        <br>
+        <input type="button" value="4" onclick="cform.ans.value +='4'" class="a"id="f" onkeydown="royal()" onkeyup="notcol()" onmousedown="click5()">
+        <input type="button" value="5" onclick="cform.ans.value +='5'" class="a" id="g" onkeydown="red()" onkeyup="notcol()" onmousedown="click6()">
+        <input type="button" value="6" onclick="cform.ans.value +='6'" class="a" id="h" onkeydown="pur()" onkeyup="notcol()" onmousedown="click7()">
+        <input type="button" value="-" onclick="cform.ans.value +='-'" class="a" id="i" onkeydown="aqua()" onkeyup="notcol()" onmousedown="click8()">
+        <br>
+        <input type="button" value="7" onclick="cform.ans.value +='7'" class="a" id="j" onkeydown="mar()" onkeyup="notcol()" onmousedown="click9()">
+        <input type="button" value="8" onclick="cform.ans.value +='8'" class="a" id="k" onkeydown="mag()" onkeyup="notcol()" onmousedown="click2()">
+        <input type="button" value="9" onclick="cform.ans.value +='9'" class="a" id="l" onkeydown="nav()" onkeyup="notcol()" onmousedown="click1()">
+        <input type="button" value="*" onclick="cform.ans.value +='*'" class="a" id="m" onkeydown="oli()" onkeyup="notcol()" onmousedown="click3()">
+        <br>
+        <input type="button" value="%" onclick="cform.ans.value +='%'" class="a" id="n" onkeydown="gray()" onkeyup="notcol()" onmousedown="click4()">
+        <input type="button" value="0" onclick="cform.ans.value +='0'" class="a" id="o" onkeydown="blu()" onkeyup="notcol()" onmousedown="click5()">
+        <input type="button" value="." onclick="cform.ans.value +='.'" class="a" id="p" onkeydown="teal()" onkeyup="notcol()" onmousedown="click6()">
+        <input type="button" value="/" onclick="cform.ans.value +='/'" class="a" id="q" onkeydown="hotp()" onkeyup="notcol()" onmousedown="click7()">
+        <br>
+        <input type="button" value="=" onclick="cform.ans.value =eval(cform.ans.value)" id="equ" onmousedown="click8()">
+        <input type="button" value="c" onclick="cform.ans.value =' '" id="clear" onmousedown="click9()">
+    </form>
+    </div>
+   <script>
+    function col()
+    {
+        document.getElementById("b").style.backgroundColor="cyan"
+    }
+    function pink()
+    {
+        document.getElementById("c").style.backgroundColor="pink"
+    }
+    function green()
+    {
+        document.getElementById("d").style.backgroundColor="green"
+    }
+    function oran()
+    {
+        document.getElementById("e").style.backgroundColor="orange"
+    }
+    function royal()
+    {
+        document.getElementById("f").style.backgroundColor="royalblue"
+    }
+    function red()
+    {
+        document.getElementById("g").style.backgroundColor="red"
+    }
+    function pur()
+    {
+        document.getElementById("h").style.backgroundColor="purple"
+    }
+    function aqua()
+    {
+        document.getElementById("i").style.backgroundColor="aqua"
+    }
+    function mar()
+    {
+        document.getElementById("j").style.backgroundColor="maroon"
+    }
+    function mag()
+    {
+        document.getElementById("k").style.backgroundColor="magenta"
+    }
+    function nav()
+    {
+        document.getElementById("l").style.backgroundColor="navy"
+    }
+    function oli()
+    {
+        document.getElementById("m").style.backgroundColor="olive"
+    }
+    function gray()
+    {
+        document.getElementById("n").style.backgroundColor="gray"
+    }
+    function blu()
+    {
+        document.getElementById("o").style.backgroundColor="blue"
+    }
+    function teal()
+    {
+        document.getElementById("p").style.backgroundColor="teal"
+    }
+    function hotp()
+    {
+        document.getElementById("q").style.backgroundColor="hotpink"
+    }
+    function notcol()
+    {
+        document.getElementById("b").style.backgroundColor="black"
+        document.getElementById("c").style.backgroundColor="black"
+        document.getElementById("d").style.backgroundColor="black"
+        document.getElementById("e").style.backgroundColor="black"
+        document.getElementById("f").style.backgroundColor="black"
+        document.getElementById("g").style.backgroundColor="black"
+        document.getElementById("h").style.backgroundColor="black"
+        document.getElementById("i").style.backgroundColor="black"
+        document.getElementById("j").style.backgroundColor="black"
+        document.getElementById("k").style.backgroundColor="black"
+        document.getElementById("l").style.backgroundColor="black"
+        document.getElementById("m").style.backgroundColor="black"
+        document.getElementById("n").style.backgroundColor="black"
+        document.getElementById("o").style.backgroundColor="black"
+        document.getElementById("p").style.backgroundColor="black"
+        document.getElementById("q").style.backgroundColor="black"
+    }
+   function click1()
+   {
+    var clisoun1=new Audio()
+    clisoun1.src="./mixkit-arcade-game-jump-coin-216.wav"
+    clisoun1.play()
+   }
+   function click2()
+   {
+    var clisoun1=new Audio()
+    clisoun1.src="./mixkit-click-error-1110.wav"
+    clisoun1.play()
+   }
+   function click3()
+   {
+    var clisoun1=new Audio()
+    clisoun1.src="./mixkit-click-melodic-tone-1129.wav"
+    clisoun1.play()
+   }
+   function click4()
+   {
+    var clisoun1=new Audio()
+    clisoun1.src="./mixkit-dumbbell-pins-at-the-gym-2102.wav"
+    clisoun1.play()
+   }
+   function click5()
+   {
+    var clisoun1=new Audio()
+    clisoun1.src="./mixkit-game-quick-warning-notification-268.wav"
+    clisoun1.play()
+   }
+   function click6()
+   {
+    var clisoun1=new Audio()
+    clisoun1.src="./mixkit-gun-click-1123.wav"
+    clisoun1.play()
+   }
+   function click7()
+   {
+    var clisoun1=new Audio()
+    clisoun1.src="./mixkit-modern-click-box-check-1120.wav"
+    clisoun1.play()
+   }
+   function click8()
+   {
+    var clisoun1=new Audio()
+    clisoun1.src="./mixkit-positive-interface-beep-221.wav"
+    clisoun1.play()
+   }
+   function click9()
+   {
+    var clisoun1=new Audio()
+    clisoun1.src="./mixkit-mouse-hard-clicking-1111.wav"
+    clisoun1.play()
+   }
+</script>
+</body>
+</html>
